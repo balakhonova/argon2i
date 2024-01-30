@@ -1,6 +1,6 @@
 /*
 argon2i - strengthen passwords with Argon2i
-Copyright (C) 2019 Elena Balakhonova <balakhonova_e@riseup.net>
+Copyright (C) 2019-2024 Elena Balakhonova <balakhonova_e@riseup.net>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

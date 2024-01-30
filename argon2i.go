@@ -1,6 +1,6 @@
 /*
 argon2i - strengthen passwords with Argon2i
-Copyright (C) 2019 Elena Balakhonova <balakhonova_e@riseup.net>
+Copyright (C) 2019-2024 Elena Balakhonova <balakhonova_e@riseup.net>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ import (
 	"os"
 
 	"golang.org/x/crypto/argon2"
-	"golang.org/x/crypto/ssh/terminal"
+	"golang.org/x/term"
 )
 
 var (
@@ -74,17 +74,17 @@ func main() {
 	}
 	flag.Parse()
 	fmt.Printf("Enter your password: ")
-	weakPasswd, err := terminal.ReadPassword(0)
+	weakPasswd, err := term.ReadPassword(0)
 	if err != nil {
 		log.Fatal(err)
 	}
 	fmt.Printf("\nEnter your password again: ")
-	weakPasswd1, err := terminal.ReadPassword(0)
+	weakPasswd1, err := term.ReadPassword(0)
 	if err != nil {
 		log.Fatal(err)
 	}
 	fmt.Println()
-	if bytes.Compare(weakPasswd, weakPasswd1) !=0 {
+	if !bytes.Equal(weakPasswd, weakPasswd1) {
 		log.Fatal("Passwords do not match")
 	}
 	var salt []byte

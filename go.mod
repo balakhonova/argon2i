@@ -1,5 +1,10 @@
 module github.com/balakhonova/argon2i
 
-go 1.13
+go 1.20
 
-require golang.org/x/crypto v0.0.0-20191122220453-ac88ee75c92c
+require (
+	golang.org/x/crypto v0.18.0
+	golang.org/x/term v0.16.0
+)
+
+require golang.org/x/sys v0.16.0 // indirect
